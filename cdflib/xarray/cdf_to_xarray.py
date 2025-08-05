@@ -812,8 +812,7 @@ def cdf_to_xarray(filename: str, to_datetime: bool = True, to_unixtime: bool = F
             # If there is an uncertainty variable, link it to the uncertainty along a dimension
             if created_vars[var_name].size == created_vars[uncertainty_variables[var_name]].size:
                 created_vars[var_name].dims = created_vars[uncertainty_variables[var_name]].dims
-            else:
-                created_data_vars[var_name] = created_vars[var_name]
+            created_data_vars[var_name] = created_vars[var_name]
         else:
             created_data_vars[var_name] = created_vars[var_name]
 
